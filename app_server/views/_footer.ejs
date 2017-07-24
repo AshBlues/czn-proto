@@ -1,0 +1,92 @@
+</div>
+<!-- Container ends here-->
+</main>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Cozone.io</h5>
+        <p class="grey-text text-lighten-4">Write once, Run anywhere</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Developer</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">API</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2017 Copyright Cozone.io
+      <a class="grey-text text-lighten-4 right" href="#!">About</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="../js/mfw.min.js"></script>
+<script>
+
+  $(document).ready(function() {
+    $(".button-collapse").sideNav();
+    refreshNavState();
+  });
+
+  function refreshNavState() {
+    var href = window.location.pathname.substr(1);
+    $('.n_o').removeClass('a_o');
+    $('a[href="' + href + '"]').addClass('a_o');
+  }
+
+  $('.n_o').on('click', function(event) {
+      event.preventDefault();
+      $('.n_o').removeClass('a_o');
+      $(this).addClass('a_o');
+      var url = $(this).attr('href');
+      $(this).find('.badge').remove();
+      getHTML(url, {user: 'rahul'}, viewDashboard);
+  });
+
+  function viewDashboard(data, url) {
+    window.localStorage.setItem(window.location.pathname, $('#htm').html());
+    $(htm).html(data);
+    window.history.pushState(null, '', url);
+    window.localStorage.setItem(window.location.pathname, $('#htm').html());
+  }
+
+
+  function getHTML(url, data, _callback) {
+    var _url = '_' + url
+    $.ajax({
+      url: _url,
+      data: data,
+      method: 'GET',
+      async: true,
+      success: function(data) {
+        _callback(data, url);
+      },
+      error: function(xhr, status, error) {
+        _callback(xhr.responseText);
+      }
+    });
+  }
+
+  //Repeatition is better than wrong abstraction.
+
+  window.addEventListener('popstate', function(event) {
+    var html = window.localStorage.getItem(window.location.pathname);
+    if(html != undefined && html != null && html.length > 0) {
+      $('#htm').html();
+      refreshNavState();
+    } else {
+      window.location.assign(window.location.href);
+    }
+  });
+
+</script>
+</html>

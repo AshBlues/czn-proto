@@ -1,0 +1,42 @@
+$c_w: #fff;
+
+main {
+  padding-top: 50px;
+  min-height: 300px;
+
+}
+
+
+.no-padd {
+  padding: 0 !important;
+}
+
+.bars {
+  margin-right: 0px !important;
+  font-size: 21px !important;
+  margin-left: 8px !important;
+}
+
+.divider2 {
+
+
+  
+  margin-bottom: 20px !important;
+}
+
+.n_o {
+//  border-top: 2px solid transparent;
+//  height: 48px;
+}
+.a_o {
+  //border-color: $c_w;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: all .2s ease-in-out;
+}
+
+.dummy {
+  height: 300px;
+  font-size: 2rem;
+  text-transform: uppercase;
+
+}
