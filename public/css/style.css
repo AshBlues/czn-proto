@@ -6078,7 +6078,7 @@ main {
 
 .lang-list {
   max-height: 160px;
-  overflow: overlay;
+  overflow: auto;
   padding: 2px 0px; }
 
 @media only screen and (max-width: 992px) {
