@@ -69,6 +69,7 @@ main {
 
 .bordered-card {
   border-top: 1px solid #ddd !important;
+  overflow: hidden;
 }
 
 .tabbed {
@@ -149,4 +150,43 @@ main {
   .lang-list {
     max-height: 186px;
   }
+}
+
+.proj-content {
+  padding: 20px;
+
+  p {
+    color: gray !important;
+  }
+
+}
+
+.bookmark {
+  margin-top: -4px;
+  margin-right: 5px;
+  color: gray;
+
+  a {
+    color: inherit;
+    padding: 0px 4px;
+    margin-right: 2px;
+  }
+}
+
+.bmrk {
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  margin-top: 1px;
+  padding-right: 1px;
+  color: #fff;
+}
+
+.project-border {
+  height: 5px;
+  background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,
+  transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,
+  rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-color: #5B2C6F;
+  margin-bottom: 10px;
 }

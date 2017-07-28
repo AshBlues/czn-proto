@@ -10,11 +10,18 @@
   <div class="row" id="tab<%= j%>">
 <% for(var i = 0; i < projs.length; i++) { %>
         <div class="col s12 m6 l4">
-          <div class="card bordered-card">
-          <div class="card-content ">
-            <span class="card-title"><%= projs[i].lang%></span>
-            <p><%= projs[i].title%></p>
-            <p><%= projs[i].created_on%></p>
+          <div class="card sticky-action">
+          <div class="card-content" style="padding:0px">
+            <div class="project-border"></div>
+            <div class="bookmark right">
+              <a class="waves-effect" href="#"><i class="fa fa-star-o"></i></a>
+            <!--  <a class="waves-effect" href="#"><i class="fa fa-share-alt"></i></a>-->
+            </div>
+            <div class="proj-content">
+              <span class="card-title"><%= projs[i].lang%></span>
+              <p><%= projs[i].title%></p>
+              <p><%= projs[i].created_on%></p>
+            </div>
           </div>
           <div class="card-action">
             <a href="#">open</a>
