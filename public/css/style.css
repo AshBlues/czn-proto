@@ -6039,7 +6039,7 @@ main {
   background-color: #FBFCFC !important; }
 
 .filter-opt {
-  display: inline-block;
+  display: block;
   margin: 0px 5px; }
   .filter-opt label {
     line-height: 20px; }
@@ -6064,6 +6064,26 @@ main {
     #rbtn span i {
       font-size: 13px !important; }
 
+.filter-divider {
+  margin: 5px 0px 8px !important; }
+
+.filter-header {
+  font-weight: 600; }
+  .filter-header .clr-btn {
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: 4px;
+    color: gray;
+    cursor: pointer; }
+
+.lang-list {
+  max-height: 160px;
+  overflow: overlay;
+  padding: 2px 0px; }
+
+@media only screen and (max-width: 992px) {
+  .lang-list {
+    max-height: 186px; } }
 /* ==========================================================================
    $BASE-PICKER
    ========================================================================== */

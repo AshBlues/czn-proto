@@ -86,7 +86,7 @@ function __challengeData() {
       title: APP_NAME + 'Challenges',
       imgs: ["ff.jpg", "user.jpg", "ff.jpg", "user.jpg", "user.jpg", "ff.jpg"],
       chall: ['Ongoing', 'Upcoming', 'Archived'],
-      lang: ["Java", "C", "C++", "Python", "Ruby", "Javascript"],
+      lang: ["Java", "C", "C++", "Python", "Ruby", "Javascript", "Perl", "Go", "Typescript"],
       complex: ["Easy", "Medium", "Hard"],
       type: ["Hiring", "Lab", "Practice"]
     };

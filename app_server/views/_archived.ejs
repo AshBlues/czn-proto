@@ -1,30 +1,48 @@
-
 <div class="row">
-  <div class="col s12">
-    <p>Language
-    <%for(var i = 0; i < lang.length; i++) {%>
-      <div class="filter-opt">
-        <input type="checkbox" class="filled-in" id="lang<%= i%>" />
-        <label for="lang<%= i%>"><%= lang[i]%></label>
+  <div class="col s12 ">
+    <div class="row">
+    <div class="col s6 m4">
+      <div class="filter-header">
+        Language
+        <div class="right clr-btn">clear</div>
       </div>
-    <%}%>
-	</p>
-    <p>Complexity
-    <%for(var i = 0; i < complex.length; i++) {%>
-      <div class="filter-opt">
-        <input type="checkbox" class="filled-in" id="complex<%= i%>" />
-        <label for="complex<%= i%>"><%= complex[i]%></label>
+      <div class="divider filter-divider"></div>
+      <div class="lang-list">
+        <%for(var i = 0; i < lang.length; i++) {%>
+          <div class="filter-opt">
+            <input type="checkbox" class="filled-in" id="lang<%= i%>" />
+            <label for="lang<%= i%>"><%= lang[i]%></label>
+          </div>
+        <%}%>
       </div>
-    <%}%>
-	</p>
-    <p>Type
-    <%for(var i = 0; i < type.length; i++) {%>
-      <div class="filter-opt">
-        <input type="checkbox" class="filled-in" id="type<%= i%>" />
-        <label for="type<%= i%>"><%= type[i]%></label>
+  	</div>
+    <div class="col s6 m4">
+      <div class="filter-header">
+        Complexity
+        <div class="right clr-btn">clear</div>
       </div>
-    <%}%>
-	</p>
+      <div class="divider filter-divider"></div>
+      <%for(var i = 0; i < complex.length; i++) {%>
+        <div class="filter-opt">
+          <input type="checkbox" class="filled-in" id="complex<%= i%>" />
+          <label for="complex<%= i%>"><%= complex[i]%></label>
+        </div>
+      <%}%>
+  	</div>
+    <div class="col s6 m4">
+      <div class="filter-header">
+        Type
+        <div class="right clr-btn">clear</div>
+      </div>
+      <div class="divider filter-divider"></div>
+      <%for(var i = 0; i < type.length; i++) {%>
+        <div class="filter-opt">
+          <input type="checkbox" class="filled-in" id="type<%= i%>" />
+          <label for="type<%= i%>"><%= type[i]%></label>
+        </div>
+      <%}%>
+  	</div>
+  </div>
   </div>
 </div>
 <div class="row" id="tab<%= j%>">
