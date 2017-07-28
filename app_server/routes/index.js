@@ -6,12 +6,20 @@ router.get('/', mainCrtl.index);
 
 module.exports = router;
 
+//Dashboard
 router.get('/dashboard', mainCrtl.dashboard);
 
 router.get('/_dashboard', mainCrtl._dashboard);
 
 
-//challeneges
-router.get('/challeneges', mainCrtl.challeneges);
+//Challeneges
+router.get('/challenges', mainCrtl.challeneges);
 
-router.get('/_challeneges', mainCrtl._challeneges);
+router.get('/_challenges', mainCrtl._challeneges);
+
+
+//Project
+router.get('/project', mainCrtl.project);
+
+//archived
+router.get('/challenges/archived', mainCrtl.archived_challenges);

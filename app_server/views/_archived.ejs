@@ -1,0 +1,50 @@
+
+<div class="row">
+  <div class="col s12">
+    <p>Language
+    <%for(var i = 0; i < lang.length; i++) {%>
+      <div class="filter-opt">
+        <input type="checkbox" class="filled-in" id="lang<%= i%>" />
+        <label for="lang<%= i%>"><%= lang[i]%></label>
+      </div>
+    <%}%>
+	</p>
+    <p>Complexity
+    <%for(var i = 0; i < complex.length; i++) {%>
+      <div class="filter-opt">
+        <input type="checkbox" class="filled-in" id="complex<%= i%>" />
+        <label for="complex<%= i%>"><%= complex[i]%></label>
+      </div>
+    <%}%>
+	</p>
+    <p>Type
+    <%for(var i = 0; i < type.length; i++) {%>
+      <div class="filter-opt">
+        <input type="checkbox" class="filled-in" id="type<%= i%>" />
+        <label for="type<%= i%>"><%= type[i]%></label>
+      </div>
+    <%}%>
+	</p>
+  </div>
+</div>
+<div class="row" id="tab<%= j%>">
+  <% for(var j = 0; j < chall.length; j++) { %>
+    <% for(var i = 0; i < chall.length; i++) { %>
+      <div class="col s12 m6 l4">
+        <div class="card sticky-action">
+          <div class="card-image">
+            <img src="../images/<%= imgs[i + j]%>">
+            <span class="card-title">Card Title</span>
+          </div>
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Register</a>
+            <a href="#">Participate</a>
+          </div>
+        </div>
+      </div>
+      <%} %>
+    <%}%>
+</div>

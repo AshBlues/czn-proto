@@ -2,8 +2,11 @@
   display:block;
   position: fixed;
   z-index: 10000;
+  width: 100%;
+  top: 7%;
+  text-align: center;
 
-  @media #{$small-and-down} {
+  /*@media #{$small-and-down} {
     min-width: 100%;
     bottom: 0%;
   }
@@ -16,29 +19,23 @@
     top: 10%;
     right: 7%;
     max-width: 86%;
-  }
+  }*/
 }
 
 .toast {
   @extend .z-depth-1;
   border-radius: 2px;
-  top: 35px;
-  width: auto;
   clear: both;
   margin-top: 10px;
   position: relative;
   max-width:100%;
-  height: auto;
-  min-height: $toast-height;
-  line-height: 1.5em;
   word-break: break-all;
   background-color: $toast-color;
-  padding: 10px 25px;
-  font-size: 1.1rem;
+  padding: 4px 20px 6px;
+  font-size: 1rem;
   font-weight: 300;
   color: $toast-text-color;
-
-  display: flex;
+  display: inline-block;
   align-items: center;
   justify-content: space-between;
 
@@ -52,14 +49,14 @@
   }
 
   @media #{$small-and-down} {
-    width:100%;
+    width:90%;
     border-radius: 0;
   }
   @media #{$medium-only} {
-    float: left;
+    max-width: 40%;
   }
   @media #{$large-and-up} {
-    float: right;
+    max-width: 20%;
   }
 
 }

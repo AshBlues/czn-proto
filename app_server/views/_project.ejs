@@ -1,0 +1,27 @@
+<ul id="proj-tabs" class="tabs tabbed">
+<% for(var j = 0; j < type.length; j++) { %>
+  <li class="tab col s2"><a href="#tab<%= j%>"><%= type[j]%></a></li>
+<%}%>
+  <li class="right hide-on-med-and-down rbtn">
+    <span class="waves-effect waves-light btn"><i class="fa fa-clone"></i> new project</span>
+  </li>
+</ul>
+<% for(var j = 0; j < type.length; j++) { %>
+  <div class="row" id="tab<%= j%>">
+<% for(var i = 0; i < projs.length; i++) { %>
+        <div class="col s12 m6 l4">
+          <div class="card bordered-card">
+          <div class="card-content ">
+            <span class="card-title"><%= projs[i].lang%></span>
+            <p><%= projs[i].title%></p>
+            <p><%= projs[i].created_on%></p>
+          </div>
+          <div class="card-action">
+            <a href="#">open</a>
+            <a href="#">delete</a>
+          </div>
+        </div>
+        </div>
+<%} %>
+  </div>
+<%}%>

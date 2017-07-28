@@ -20,7 +20,7 @@ main {
 .divider2 {
 
 
-  
+
   margin-bottom: 20px !important;
 }
 
@@ -38,5 +38,89 @@ main {
   height: 300px;
   font-size: 2rem;
   text-transform: uppercase;
+
+}
+
+#toast {
+    display:none;
+    animation-name: toast-anim;
+    animation-duration: 0.2s;
+}
+
+
+@keyframes  toast-anim {
+    from {
+      top: -200px;
+      opacity:0;
+    }
+    to {
+      top: 0px;
+      opacity: 1;
+    }
+
+}
+
+
+.ends-in {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    width: 100%;
+    text-align: right;
+    padding: 5px 10px;
+}
+
+.bordered-card {
+  border-top: 1px solid #ddd !important;
+}
+
+.tabbed {
+  background-color: $body-background !important;
+}
+
+
+.filter-opt {
+  display: inline-block;
+  margin: 0px 5px;
+
+  label {
+    line-height: 20px;
+  }
+
+}
+
+
+#page-nav {
+  margin-top: 5px;
+  line-height: 25px;
+  color: #333;
+  font-size: 13px;
+
+  a {
+    padding: 0px 5px;
+    color:#333;
+    font-size: 13px;
+    text-transform: capitalize;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+}
+
+.rbtn {
+  margin-top: 6px !important;
+
+  span {
+    font-size: 13px !important;
+
+    i {
+      font-size: 13px !important;
+    }
+
+  }
+
+}
+
 
 }
