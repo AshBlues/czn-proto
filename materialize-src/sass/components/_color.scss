@@ -62,13 +62,13 @@ $purple: (
   "lighten-2":  #ba68c8,
   "lighten-1":  #ab47bc,
   "darken-1":   #8e24aa,
-  "darken-2":   #7b1fa2,
+  "darken-2":   #6C3483,
   "darken-3":   #6a1b9a,
   "darken-4":   #4a148c,
-  "accent-1":    #ea80fc,
-  "accent-2":    #e040fb,
-  "accent-3":    #d500f9,
-  "accent-4":    #aa00ff
+  "accent-1":   #ea80fc,
+  "accent-2":   #e040fb,
+  "accent-3":   #d500f9,
+  "accent-4":   #aa00ff
 );
 
 $deep-purple: (
@@ -409,4 +409,3 @@ $colors: (
   @warn "Unknown `#{name}` in $colors.";
   @return null;
 }
-
