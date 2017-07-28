@@ -6056,12 +6056,13 @@ main {
     text-transform: capitalize; }
     #page-nav a:hover {
       text-decoration: underline; }
-  #page-nav .rbtn {
-    margin-top: 6px !important; }
-    #page-nav .rbtn span {
+
+#rbtn {
+  margin-top: 6px !important; }
+  #rbtn span {
+    font-size: 13px !important; }
+    #rbtn span i {
       font-size: 13px !important; }
-      #page-nav .rbtn span i {
-        font-size: 13px !important; }
 
 /* ==========================================================================
    $BASE-PICKER
