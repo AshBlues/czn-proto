@@ -6,6 +6,25 @@
 <%- include('_nmus') %>
 
 </body>
+
+<div style="display:none;" type="text/template" id="search-template">
+  <div class="search-part">
+    <header class="query-section">
+      <input class="js-srch-qry " type="text">
+    </header>
+    <section class="query-result">
+
+    </section>
+  </div>
+</div>
+
+<div style="display:none;" type="text/template" id="user-template">
+  <ul class="user-opt-list">
+    <li class=""><i class="fa fa-user-o"></i>Profile</li>
+    <li class=""><i class="fa fa-bookmark"></i>Bookmarks</li>
+    <li class=""><i class="fa fa-sign-out"></i>Logout</li>
+  </ul>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../js/mfw.min.js"></script>
 <script>
@@ -54,6 +73,7 @@
   $('.nmus').click(function(event) {
     event.preventDefault();
     var type = $(this).attr('data-type');
+    var tmplt = $('#user-template').html();
     if($(window).width() <= 630) {
         $('body').css({overflow: 'hidden'});
         $('#a-nmus').show();
@@ -64,8 +84,16 @@
         _commonTask();
       } else {
         _commonTask();
-        $($(this).siblings()[0]).show();
+        var mainPanel = $(this).siblings()[0];
+        $(mainPanel).show();
+        $(mainPanel).find('.title-text').text(type);
+        $(mainPanel).find('.see-all').hide();
+        $(mainPanel).find('.push-data').html(tmplt);
+        $('.js-srch-qry').focus();
         $(this).css({'background-color': '#fff', color: '#5B2C6F'});
+        if(type.charAt(0) === 'O') {
+          $(mainPanel).addClass('user-options');
+        }
       }
 
       function _commonTask() {
@@ -74,6 +102,7 @@
       }
     }
   });
+
 
   $('#nmus-type .close-btn').click(function() {
     hideNmus();
