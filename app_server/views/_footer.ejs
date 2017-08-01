@@ -2,6 +2,9 @@
 <!-- Container ends here-->
 </main>
 <%- include('_footer-view') %>
+
+<%- include('_nmus') %>
+
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../js/mfw.min.js"></script>
@@ -46,104 +49,155 @@
     })();
 
   }
-/*
-  $('.n_o').on('click', function(event) {
-      event.preventDefault();
-      __changeLinkUI(this);
-      var url = $(this).attr('href');
-      var _url = '/' + url;
 
-      if(isCached(_url)) {
-        doNext(__getCachedContent(_url), url);
+
+  $('.nmus').click(function(event) {
+    event.preventDefault();
+    var type = $(this).attr('data-type');
+    if($(window).width() <= 630) {
+        $('body').css({overflow: 'hidden'});
+        $('#a-nmus').show();
+        $('.a-main-panel').animate({'margin-right': '9%'}, 300);
+        $('#nmus-type .title').html(type + ' <span class="ldr"><i class="fa fa-refresh fa-spin fa-fw"></i></span>');
+    } else {
+      if($(this)[0].hasAttribute('style')) {
+        _commonTask();
       } else {
-        getHTML(url, {}, doNext);
+        _commonTask();
+        $($(this).siblings()[0]).show();
+        $(this).css({'background-color': '#fff', color: '#5B2C6F'});
       }
 
-
-      function __getCachedContent(url) {
-        return $.parseJSON(window.localStorage.getItem(url)).html;
+      function _commonTask() {
+        $('.nmus').removeAttr('style');
+        $('.main-panel').hide();
       }
-
-      function __changeLinkUI(link) {
-        $('.n_o').removeClass('a_o');
-        $(link).addClass('a_o');
-        $(link).find('.badge').remove();
-      }
+    }
   });
 
-  function getHTML(url, data, _callback) {
-    toast();
-    var _url = '_' + url
-    $.ajax({
-      url: _url,
-      data: data,
-      method: 'GET',
-      async: true,
-      success: function(data) {
-        _callback(data, url);
-      },
-      error: function(xhr, status, error) {
-        _callback(xhr.responseText);
-      },
-      complete: function() {
-        hideToast();
-      }
+  $('#nmus-type .close-btn').click(function() {
+    hideNmus();
+  });
 
+  $('#a-nmus').click(function(event) {
+    if(event.target.id === 'a-nmus') {
+      hideNmus();
+    }
+  });
+
+  function hideNmus() {
+    $('body').removeAttr('style');
+    $('.a-main-panel').animate({'margin-right': '-80%'}, 300, function() {
+      $('#a-nmus').fadeOut('fast');
     });
   }
 
-  function doNext(data, url) {
-    var obj = {
-      html: data
-    };
-    var title = renderView(obj);
-    window.history.pushState(obj, title, url);
-    cacheContent(obj);
-
-  }
-
-  window.addEventListener('popstate', function(event) {
-    showCachedContent(event);
+  $('.nmus').focusout(function() {
+    $('.main-panel').hide();
   });
 
-  function showCachedContent(e) {
-    if(e.state) {
-      renderView(e.state);
-      refreshNavState();
-    } else {
-    //  window.location.assign(window.location.href);
-    }
-  }
-
-  function renderView(obj) {
-    $('#htm').html(obj.html);
-    var title = $('#dummy-title').text();
-    $('title').text(title);
-    return title;
-  }
-
-  function cacheContent(obj) {
-    window.localStorage.setItem(window.location.pathname, JSON.stringify(obj));
-  }
-
-  function isCached(url) {
-    return window.localStorage.getItem(url) != null;
-  }
-
-  window.onbeforeunload = function() {
-    window.localStorage.clear();
-  };
-*/
   function toast(html) {
     if(html) {
       $('#toast').html(html);
+      $('#toast').css('display', 'inline-block');
     }
-    $('#toast').css('display', 'inline-block');
   }
 
   function hideToast() {
     $('#toast').hide();
   }
+
+
+
+
+  /*
+    $('.n_o').on('click', function(event) {
+        event.preventDefault();
+        __changeLinkUI(this);
+        var url = $(this).attr('href');
+        var _url = '/' + url;
+
+        if(isCached(_url)) {
+          doNext(__getCachedContent(_url), url);
+        } else {
+          getHTML(url, {}, doNext);
+        }
+
+
+        function __getCachedContent(url) {
+          return $.parseJSON(window.localStorage.getItem(url)).html;
+        }
+
+        function __changeLinkUI(link) {
+          $('.n_o').removeClass('a_o');
+          $(link).addClass('a_o');
+          $(link).find('.badge').remove();
+        }
+    });
+
+    function getHTML(url, data, _callback) {
+      toast();
+      var _url = '_' + url
+      $.ajax({
+        url: _url,
+        data: data,
+        method: 'GET',
+        async: true,
+        success: function(data) {
+          _callback(data, url);
+        },
+        error: function(xhr, status, error) {
+          _callback(xhr.responseText);
+        },
+        complete: function() {
+          hideToast();
+        }
+
+      });
+    }
+
+    function doNext(data, url) {
+      var obj = {
+        html: data
+      };
+      var title = renderView(obj);
+      window.history.pushState(obj, title, url);
+      cacheContent(obj);
+
+    }
+
+    window.addEventListener('popstate', function(event) {
+      showCachedContent(event);
+    });
+
+    function showCachedContent(e) {
+      if(e.state) {
+        renderView(e.state);
+        refreshNavState();
+      } else {
+      //  window.location.assign(window.location.href);
+      }
+    }
+
+    function renderView(obj) {
+      $('#htm').html(obj.html);
+      var title = $('#dummy-title').text();
+      $('title').text(title);
+      return title;
+    }
+
+    function cacheContent(obj) {
+      window.localStorage.setItem(window.location.pathname, JSON.stringify(obj));
+    }
+
+    function isCached(url) {
+      return window.localStorage.getItem(url) != null;
+    }
+
+    window.onbeforeunload = function() {
+      window.localStorage.clear();
+    };
+  */
 
 
 </script>

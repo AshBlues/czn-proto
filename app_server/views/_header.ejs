@@ -37,10 +37,21 @@
           </ul>
           <div  class="right">
             <ul>
-            <li><a href="#"><i class="fa fa-search"></i></a></li>
-            <li><a href="#"><i class="fa fa-bell"></i></a></li>
-            <li><a href="#"><i class="fa fa-comments"></i></a></li>
-            <li class="hide-on-med-and-down"><a href="#"><i class="fa fa-user-circle-o"></i></a></li>
+              <li><a data-type="Search" class="nmus"><i class="fa fa-search"></i></a>
+                <%- include('_nmus-large') %>
+              </li>
+              <li><a data-type="Notification" class="nmus"><i class="fa fa-bell"></i></a>
+                <%- include('_nmus-large') %>
+              </li>
+              <li><a data-type="Message" class="nmus"><i class="fa fa-comments"></i></a>
+                <%- include('_nmus-large') %>
+              </li>
+              <li class="hide-on-med-and-down">
+                <a data-type="user" class="nmus">
+                  <i class="fa fa-user-circle-o"></i>
+                </a>
+                <%- include('_nmus-large') %>
+              </li>
             </ul>
           </div>
         </div>
@@ -50,12 +61,12 @@
         <ul id="mobile-demo" class="side-nav">
           <li>
             <div class="user-view">
-              <div class="background">
-                <img src="../images/office1.jpg">
+              <div class="background side-nav-banner">
+                <!--<img src="../images/office1.jpg">-->
               </div>
-              <a href="#!user"><img class="circle" src="../images/user.jpg"></a>
-              <a href="#!name"><span class="white-text name">John Doe</span></a>
-              <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+              <a href="#!user"><img class="circle" src="../images/favicon.ico"></a>
+              <a href="#!name"><span class="white-text name">James Gosling</span></a>
+              <a href="#!email"><span class="white-text email">jamesgosling@czn.com</span></a>
             </div>
           </li>
           <li class=""><a href="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
@@ -63,6 +74,7 @@
           <li class=""><a href="/project"><i class="fa fa-clone"></i>Projects</a></li>
           <li class=""><a href="#test4"><i class="fa fa-institution"></i>Labs</a></li>
           <li class=""><a href="#test4"><i class="fa fa-user-o"></i>Profile</a></li>
+          <li class=""><a href="#test4"><i class="fa fa-bookmark"></i>Bookmarks</a></li>
           <li class=""><a href="#test4"><i class="fa fa-sign-out"></i>Logout</a></li>
         </ul>
 
