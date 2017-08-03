@@ -21,5 +21,9 @@ router.get('/_challenges', mainCrtl._challeneges);
 //Project
 router.get('/project', mainCrtl.project);
 
-//archived
+//Archived
 router.get('/challenges/archived', mainCrtl.archived_challenges);
+
+
+//Lab
+router.get('/lab', mainCrtl.lab);

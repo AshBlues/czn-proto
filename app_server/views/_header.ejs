@@ -33,24 +33,42 @@
             <li class=""><a class="n_o" href="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
             <li class=""><a class="n_o" href="/challenges"><i class="fa fa-check"></i> Challenges</a></li>
             <li class=""><a class="n_o" href="/project"><i class="fa fa-clone"></i> Projects</a></li>
-            <li class=""><a class="n_o" href="#test4"><i class="fa fa-institution"></i> Labs</a></li>
+            <li class=""><a class="n_o" href="/lab"><i class="fa fa-institution"></i> Labs</a></li>
           </ul>
           <div  class="right">
             <ul>
               <li><a data-type="Search" class="nmus"><i class="fa fa-search"></i></a>
-                <%- include('_nmus-large') %>
+                <%- include('_nmus-large-su', {'_obj_': {
+                  'search': true,
+                  'seeAll': false,
+                  'extraCls': '',
+                  'link': ''
+               }}) %>
               </li>
               <li><a data-type="Notification" class="nmus"><i class="fa fa-bell"></i></a>
-                <%- include('_nmus-large') %>
+                <%- include('_nmus-large-nm', {'_obj_': {
+                  'seeAll': true,
+                  'extraCls': '',
+                  'link': '/notifications'
+               }}) %>
               </li>
               <li><a data-type="Message" class="nmus"><i class="fa fa-comments"></i></a>
-                <%- include('_nmus-large') %>
+                <%- include('_nmus-large-nm', {'_obj_': {
+                  'seeAll': true,
+                  'extraCls': '',
+                  'link': '/messages'
+               }}) %>
               </li>
               <li class="hide-on-med-and-down">
                 <a data-type="Option" class="nmus">
                   <i class="fa fa-user-circle-o"></i>
                 </a>
-                <%- include('_nmus-large') %>
+                <%- include('_nmus-large-su', {'_obj_': {
+                  'search': false,
+                  'seeAll': false,
+                  'extraCls': 'user-options',
+                  'link': ''
+               }}) %>
               </li>
             </ul>
           </div>
@@ -72,9 +90,9 @@
           <li class=""><a href="/dashboard"><i class="fa fa-dashboard"></i>Dashboard</a></li>
           <li class=""><a href="/challenges"><i class="fa fa-check"></i>Challenges</a></li>
           <li class=""><a href="/project"><i class="fa fa-clone"></i>Projects</a></li>
-          <li class=""><a href="#test4"><i class="fa fa-institution"></i>Labs</a></li>
+          <li class=""><a href="/lab"><i class="fa fa-institution"></i>Labs</a></li>
           <li class=""><a href="#test4"><i class="fa fa-user-o"></i>Profile</a></li>
-          <li class=""><a href="#test4"><i class="fa fa-bookmark"></i>Bookmarks</a></li>
+          <li class=""><a href="#test4"><i class="fa fa-star"></i>Bookmarks</a></li>
           <li class=""><a href="#test4"><i class="fa fa-sign-out"></i>Logout</a></li>
         </ul>
 

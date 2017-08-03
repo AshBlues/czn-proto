@@ -7,24 +7,6 @@
 
 </body>
 
-<div style="display:none;" type="text/template" id="search-template">
-  <div class="search-part">
-    <header class="query-section">
-      <input class="js-srch-qry " type="text">
-    </header>
-    <section class="query-result">
-
-    </section>
-  </div>
-</div>
-
-<div style="display:none;" type="text/template" id="user-template">
-  <ul class="user-opt-list">
-    <li class=""><i class="fa fa-user-o"></i>Profile</li>
-    <li class=""><i class="fa fa-bookmark"></i>Bookmarks</li>
-    <li class=""><i class="fa fa-sign-out"></i>Logout</li>
-  </ul>
-</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../js/mfw.min.js"></script>
 <script>
@@ -47,7 +29,9 @@
     if(path.length > 1) {
       var href = path.lastIndexOf('/') != 0 ? ('/' + path.split('/')[1]) : path;
       $('.n_o').removeClass('a_o');
-      $('a[href="' + href + '"]').addClass('a_o');
+      $('a[href="' + href + '"]').each(function(i, a){
+        if(!$(a).hasClass('grey-text')) {  $(a).addClass('a_o')};
+      });
     }
 
 
@@ -73,36 +57,39 @@
   $('.nmus').click(function(event) {
     event.preventDefault();
     var type = $(this).attr('data-type');
-    var tmplt = $('#user-template').html();
+
     if($(window).width() <= 630) {
         $('body').css({overflow: 'hidden'});
+        if(type.charAt(0) === 'S') {
+          $('#js-mob-srch-ui').show();
+          $('#js-comsg').hide();
+        } else {
+          $('#js-mob-srch-ui').hide();
+          $('#js-comsg').show();
+        }
         $('#a-nmus').show();
         $('.a-main-panel').animate({'margin-right': '9%'}, 300);
-        $('#nmus-type .title').html(type + ' <span class="ldr"><i class="fa fa-refresh fa-spin fa-fw"></i></span>');
+        $('#nmus-type .title span').html(type);
+        $('.js-srch-qry:visible').focus();
     } else {
       if($(this)[0].hasAttribute('style')) {
         _commonTask();
       } else {
         _commonTask();
+        $(this).css({'background-color': '#fff', color: '#5B2C6F'});
         var mainPanel = $(this).siblings()[0];
         $(mainPanel).show();
         $(mainPanel).find('.title-text').text(type);
-        $(mainPanel).find('.see-all').hide();
-        $(mainPanel).find('.push-data').html(tmplt);
-        $('.js-srch-qry').focus();
-        $(this).css({'background-color': '#fff', color: '#5B2C6F'});
-        if(type.charAt(0) === 'O') {
-          $(mainPanel).addClass('user-options');
-        }
-      }
-
-      function _commonTask() {
-        $('.nmus').removeAttr('style');
-        $('.main-panel').hide();
+        $('.js-srch-qry:visible').focus();
       }
     }
+
   });
 
+  function _commonTask() {
+    $('.nmus').removeAttr('style');
+    $('.main-panel').hide();
+  }
 
   $('#nmus-type .close-btn').click(function() {
     hideNmus();
@@ -121,10 +108,6 @@
     });
   }
 
-  $('.nmus').focusout(function() {
-    $('.main-panel').hide();
-  });
-
   function toast(html) {
     if(html) {
       $('#toast').html(html);
@@ -134,9 +117,15 @@
 
   function hideToast() {
     $('#toast').hide();
+
   }
 
-
+  $('.main-panel').click(function(event) {
+    _commonTask();
+  });
+  $('.m-u-lrg').click(function(event) {
+    event.stopPropagation();
+  });
 
 
   /*

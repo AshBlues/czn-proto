@@ -1,11 +1,21 @@
 <div id="a-nmus">
   <div class="a-main-panel">
     <div id="nmus-type">
-      <div class="title"></div>
+      <div class="title">
+        <span class="title-text"></span>
+        <div class="ldr">
+          <img src="../images/ldr.gif">
+        </div>
+      </div>
       <div class="close-btn">&#10006;</div>
     </div>
     <div class="main-ui">
-        <%- include('_sample_nmus') %>
+        <section id="js-comsg">
+          <%- include('_sample_nmus') %>
+        </section>
+        <section id="js-mob-srch-ui">
+          <%- include('_nmus-search-ui') %>
+        </section>
     </div>
   </div>
 </div>

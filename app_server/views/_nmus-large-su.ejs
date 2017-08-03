@@ -1,0 +1,10 @@
+<%- include('_nmus-l-hdr', {_obj_: _obj_}) %>
+    <div class="push-data">
+      <%if(_obj_.search) { %>
+        <%- include('_nmus-search-ui')%>
+      <%} else {%>
+        <%- include('_nmus-userop-ui')%>
+      <%}%>
+    </div>
+  </div>
+</div>

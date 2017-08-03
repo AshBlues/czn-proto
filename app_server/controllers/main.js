@@ -81,6 +81,26 @@ module.exports.archived_challenges = function(req, res) {
   res.render('archived', __challengeData());
 };
 
+module.exports.lab = function(req, res) {
+  res.render('lab', {
+    title: APP_NAME + 'Lab',
+    type: ['recent', 'active', 'archived'],
+    projs: [
+      {
+        lang: 'Java',
+        title: 'Java Beans Practice',
+        created_on: '20 July, 2017'
+      },
+      {
+        lang: 'C++',
+        title: 'Multi threading Practice',
+        created_on: '25 July, 2017'
+      }
+    ]
+  });
+}
+
+
 function __challengeData() {
   return {
       title: APP_NAME + 'Challenges',
