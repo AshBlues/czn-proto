@@ -40,6 +40,10 @@
       $('#page-nav').html(right);
       var links = path.split('/');
       var no = 0;
+      if(path.indexOf('/profile') === 0) {
+        $('#page-nav').hide();
+        return;
+      }
       $(links).each(function(a, link) {
         if(link.length > 0) {
           if(no > 0) {

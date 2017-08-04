@@ -6112,14 +6112,109 @@ main {
 
 .project-border {
   height: 5px;
-  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-color: #5B2C6F;
   margin-bottom: 10px; }
 
 .side-nav-banner {
+  min-height: 150px; }
+
+.bg-img-common, .project-border, .side-nav-banner {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-color: #5B2C6F; }
+
+.prof-row {
+  min-height: 350px !important; }
+
+.profile-banner {
+  background-image: url("../images/rr.jpg");
+  min-height: 250px !important;
+  max-height: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 0px !important;
+  background-size: cover; }
+  .profile-banner .user-name {
+    color: #fff;
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+    margin-top: -18px;
+    font-weight: 600;
+    text-shadow: 3px 3px 3px #000; }
+  .profile-banner .profile-pic {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    bottom: -27px;
+    width: 100%;
+    text-align: center; }
+    .profile-banner .profile-pic img {
+      width: 150px;
+      height: 150px;
+      padding: 5px 10px 10px;
+      border: 3px solid #ddd;
+      background-color: #fff;
+      border-radius: 5px; }
+    .profile-banner .profile-pic .user-info {
+      border-top: none;
+      height: 100px;
+      margin-top: -75px;
+      padding-top: 74px;
+      font-weight: 600; }
+      .profile-banner .profile-pic .user-info i {
+        color: #F1C40F;
+        font-weight: normal; }
+
+@media only screen and (max-width: 992px) {
+  .prof-row {
+    min-height: 250px !important; }
+
+  .profile-banner {
+    min-height: 170px !important;
+    max-height: 170px;
+    position: absolute;
+    left: 0 !important;
+    width: 100% !important;
+    margin-top: -10px; }
+    .profile-banner .profile-pic {
+      /*  img {
+          width: 100px;
+          height: 100px;
+        }*/ } }
+.centered-text {
+  text-align: center;
+  margin: 20px 0px; }
+
+.radio-wrapper {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-color: #5B2C6F;
-  min-height: 150px; }
+  border-radius: 50%;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  position: relative; }
+  .radio-wrapper .radio {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 10px;
+    left: 10px;
+    padding-top: 37px; }
+
+.big-count {
+  font-size: 3rem;
+  color: #5B2C6F !important; }
+
+.count-for {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: gray; }
+
+.sec {
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  border-radius: 2px; }
 
 .main-panel {
   color: #000;
@@ -6242,8 +6337,7 @@ main {
 .user-opt-list {
   padding: 0;
   margin: 0;
-  list-style: none;
-  height: 109px; }
+  list-style: none; }
   .user-opt-list li {
     display: block;
     width: 100%;
@@ -6251,15 +6345,19 @@ main {
     font-weight: 500;
     height: 35px;
     line-height: 35px;
-    border-bottom: 1px solid #F2F3F4; }
-    .user-opt-list li i {
-      margin: 0px 15px;
-      color: rgba(0, 0, 0, 0.54);
-      height: 35px;
-      line-height: 35px; }
-    .user-opt-list li:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-      cursor: pointer; }
+    margin-bottom: 1px; }
+    .user-opt-list li a {
+      padding: 0 !important;
+      color: rgba(0, 0, 0, 0.7) !important;
+      border-bottom: 1px solid #F2F3F4; }
+      .user-opt-list li a:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        cursor: pointer; }
+      .user-opt-list li a i {
+        margin: 0px 15px;
+        color: rgba(0, 0, 0, 0.54);
+        height: 35px;
+        line-height: 35px; }
 
 #mob-srch-ui {
   display: none; }

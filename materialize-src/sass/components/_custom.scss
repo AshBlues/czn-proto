@@ -186,19 +186,172 @@ main {
   color: #fff;
 }
 
+$bg-img: linear-gradient(45deg,rgba(255,255,255,.15) 25%,
+transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,
+rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+
+$bg-clr: #5B2C6F;
+
+$brdr-clr: #e5e6e9 #dfe0e4 #d0d1d5;
+
 .project-border {
   height: 5px;
-  background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,
-  transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,
-  rgba(255,255,255,.15) 75%,transparent 75%,transparent);
-  background-color: #5B2C6F;
+  @extend .bg-img-common;
   margin-bottom: 10px;
 }
 
 .side-nav-banner {
-  background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,
-  transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,
-  rgba(255,255,255,.15) 75%,transparent 75%,transparent);
-  background-color: #5B2C6F;
+  @extend .bg-img-common;
   min-height: 150px;
+}
+
+
+.bg-img-common {
+  background-image: $bg-img;
+  background-color: $bg-clr;
+}
+
+
+.non-nav-a {
+
+
+
+}
+
+.prof-row {
+  min-height: 350px !important;
+}
+
+.profile-banner {
+  background-image: url('../images/rr.jpg');
+  min-height: 250px !important;
+  max-height: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 0px !important;
+  background-size: cover;
+
+  .user-name {
+    color: #fff;
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+    margin-top: -18px;
+    font-weight: 600;
+    text-shadow: 3px 3px 3px #000;
+  }
+
+  .profile-pic {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      bottom: -27px;
+      width: 100%;
+      text-align: center;
+
+      img {
+        width: 150px;
+        height: 150px;
+        padding: 5px 10px 10px;
+        border: 3px solid #ddd;
+        background-color: #fff;
+        border-radius: 5px;
+
+      }
+
+      .user-info {
+      //  border: 1px solid;
+      //  border-color: $brdr-clr;
+        border-top: none;
+        height: 100px;
+        //background-color: #fff;
+        margin-top: -75px;
+        padding-top: 74px;
+      //  color: $bg-clr;
+        font-weight: 600;
+
+        i {
+          color: #F1C40F;
+          font-weight: normal;
+        }
+
+      }
+
+  }
+
+
+
+}
+
+@media #{$medium-and-down} {
+
+  .prof-row {
+    min-height: 250px !important;
+  }
+
+  .profile-banner {
+    min-height: 170px !important;
+    max-height: 170px;
+    position: absolute;
+    left: 0 !important;
+    width: 100% !important;
+    margin-top: -10px;
+
+    .profile-pic {
+    /*  img {
+        width: 100px;
+        height: 100px;
+      }*/
+    }
+  }
+
+
+}
+
+
+
+.centered-text {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+
+.radio-wrapper {
+  background-image: $bg-img;
+  background-color: $bg-clr;
+  border-radius: 50%;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  position: relative;
+
+  .radio {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 10px;
+    left: 10px;
+    padding-top: 37px;
+  }
+}
+
+.big-count {
+//  text-shadow: 1px 1px 1px #000;
+  font-size: 3rem;
+  color: $bg-clr !important;
+}
+
+.count-for {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: gray;
+}
+
+
+.sec {
+  border: 1px solid;
+  border-color: $brdr-clr;
+  border-radius: 2px;
 }

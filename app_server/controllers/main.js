@@ -27,6 +27,11 @@ module.exports.challeneges = function(req, res) {
 };
 
 
+module.exports.profile = function(req, res) {
+  res.render('profile', {title: APP_NAME + 'Profile'});
+}
+
+
 module.exports.project = function(req, res) {
   res.render('project', {
     title: APP_NAME + 'Project',
@@ -101,10 +106,11 @@ module.exports.lab = function(req, res) {
 }
 
 
+
 function __challengeData() {
   return {
       title: APP_NAME + 'Challenges',
-      imgs: ["ff.jpg", "user.jpg", "ff.jpg", "user.jpg", "user.jpg", "ff.jpg"],
+      imgs: ["ff.jpg", "banner_.jpg", "user.jpg", "banner3.jpg", "banner.jpg", "banner2.jpg"],
       chall: ['Ongoing', 'Upcoming', 'Archived'],
       lang: ["Java", "C", "C++", "Python", "Ruby", "Javascript", "Perl", "Go", "Typescript"],
       complex: ["Easy", "Medium", "Hard"],

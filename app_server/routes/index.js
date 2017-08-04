@@ -27,3 +27,6 @@ router.get('/challenges/archived', mainCrtl.archived_challenges);
 
 //Lab
 router.get('/lab', mainCrtl.lab);
+
+//Profile
+router.get('/profile', mainCrtl.profile);
