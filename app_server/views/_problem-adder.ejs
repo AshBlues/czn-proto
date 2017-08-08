@@ -1,0 +1,73 @@
+<form onsubmit="return false;">
+  <header>
+    Problem
+  </header>
+  <body>
+    <div class="row">
+      <div class="input-field col s12">
+        <input type="text" id="p_title" data-length="32" name="title" required>
+        <label for="p_title">Title</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="p_desc" class="materialize-textarea" name="probStmt" required></textarea>
+        <label for="p_desc">Problem Statement</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="p_extra-info" class="materialize-textarea" name="extraInfo" required></textarea>
+        <label for="p_extra-info">Extra Information</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="p_ip-format" class="materialize-textarea" name="ipFormat" required></textarea>
+        <label for="p_ip-format">Input Format</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="p_constraints" class="materialize-textarea" name="constraints" required></textarea>
+        <label for="p_constraints">Constraints</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="p_op-format" class="materialize-textarea" name="opFormat" required></textarea>
+        <label for="p_op-format">Output Format</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="p_time-limit" type="text" required name="timeLimit">
+        <label for="p_time-limit">Time Limit in Secs.</label>
+      </div>
+      <div class="input-field col s6">
+        <select required id="prob-complexity">
+           <option value="" disabled selected>Select</option>
+           <option value="1">Easy</option>
+           <option value="2">Medium</option>
+           <option value="3">Hard</option>
+         </select>
+         <label>Complexity</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="p_totalScore" type="text" name="totalScore" required>
+        <label for="p_totalScore">Total Score</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="p_tags" type="text" name="tags" required>
+        <label for="p_tags">Tags</label>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <button class="btn waves-effect waves-light" type="submit" name="action">
+      Next
+    </button>
+  </footer>
+</form>
