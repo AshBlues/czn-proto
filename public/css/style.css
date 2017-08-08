@@ -6329,7 +6329,8 @@ main {
 
 .user-options {
   width: 166px;
-  margin-left: -121px; }
+  margin-left: -121px;
+  padding-bottom: 1px; }
 
 .search-part {
   padding: 10px; }
@@ -6683,7 +6684,7 @@ main {
 .picker__day--selected,
 .picker__day--selected:hover,
 .picker--focused .picker__day--selected {
-  border-radius: 50%;
+  border-radius: 5px;
   transform: scale(0.75);
   background: #0089ec;
   color: #ffffff; }
@@ -6800,8 +6801,7 @@ main {
 .picker__nav--prev:hover,
 .picker__nav--next:hover {
   cursor: pointer;
-  color: #000000;
-  background: #c6b9e0; }
+  color: #000000; }
 
 .picker__weekday-display {
   font-weight: 500;
@@ -6857,7 +6857,7 @@ main {
 .picker__day--selected,
 .picker__day--selected:hover,
 .picker--focused .picker__day--selected {
-  border-radius: 50%;
+  border-radius: 5px;
   transform: scale(0.9);
   background-color: #5e35b1;
   color: #ffffff; }

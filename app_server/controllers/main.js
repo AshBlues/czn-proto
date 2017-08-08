@@ -8,6 +8,7 @@ module.exports.index = function(req, res) {
 
 
 module.exports.dashboard = function(req, res) {
+//  console.log(req.params.user);
   res.render('dashboard', {title: APP_NAME + 'Dashboard'});
 };
 
@@ -117,3 +118,9 @@ function __challengeData() {
       type: ["Hiring", "Lab", "Practice"]
     };
 }
+
+
+
+module.exports.createChallenege = function(req, res) {
+  res.render('challenge-creator', {title: APP_NAME + 'Create Challenge'});
+};

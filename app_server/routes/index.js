@@ -17,6 +17,8 @@ router.get('/challenges', mainCrtl.challeneges);
 
 router.get('/_challenges', mainCrtl._challeneges);
 
+//Challeneges/create
+router.get('/challenges/create', mainCrtl.createChallenege);
 
 //Project
 router.get('/project', mainCrtl.project);

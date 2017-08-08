@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col s12 m3">
+    <ul class="stage-list">
+      <li class="stage" data-for="#part1">
+        About
+      </li>
+      <li class="stage"  data-for="#part2">
+        Problem &amp; IO
+      </li>
+      <li class="stage"  data-for="#part3">
+        Publish
+      </li>
+    </ul>
+  </div>
+  <div class="col s12 m9">
+    <section class="chall-part" id="part1">
+    <form onsubmit="return false;">
+      <header>
+        About the Challenge
+      </header>
+      <body>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" id="c_title" data-length="32" name="title" required>
+            <label for="c_title">Title</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="c_desc" class="materialize-textarea" name="desc" required></textarea>
+            <label for="c_desc">Description</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" id="c_duration" name="duration" required>
+            <label for="c_duration">Duration in HRS</label>
+          </div>
+          <div class="input-field col s6">
+            <select multiple required id="lang-sel">
+               <option value="" disabled selected>Select</option>
+               <option value="1">Java</option>
+               <option value="2">C</option>
+               <option value="3">C++</option>
+             </select>
+             <label>Languages Allowed</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="c_prob-count" type="text" required name="nprob">
+            <label for="c_prob-count">No of problems</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="c_score" type="text" required name="score">
+            <label for="c_score">Total Score</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="c_start-date" type="text" class="datepicker" required name="startDate">
+            <label for="c_start-date">Start Date</label>
+          </div>
+          <div class="input-field col s6">
+             <input id="c_start-time" type="text" class="timepicker" required name="startTime">
+            <label for="c_start-time">Start Time</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="c_end-date" type="text" class="datepicker" required name="endDate">
+            <label for="c_end-date">End Date</label>
+          </div>
+          <div class="input-field col s6">
+             <input id="c_end-time" type="text" class="timepicker" required name="endTime">
+            <label for="c_end-time">End Time</label>
+          </div>
+        </div>
+
+      </body>
+      <footer>
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+          Next
+        </button>
+      </footer>
+    </form>
+    </section>
+    <section class="chall-part" id="part2"></section>
+    <section class="chall-part" id="part3"></section>
+    <section class="chall-part" id="part4"></section>
+  </div>
+
+
+</div>

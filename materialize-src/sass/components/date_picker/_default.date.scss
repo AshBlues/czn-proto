@@ -208,9 +208,7 @@
 .picker__day--selected:hover,
 .picker--focused .picker__day--selected {
 
-
-//  Circle background
-   border-radius: 50%;
+   border-radius: 5px;
   transform: scale(.75);
   background: #0089ec;
   color: #ffffff;
@@ -334,7 +332,7 @@
 .picker__nav--next:hover {
   cursor: pointer;
   color: #000000;
-  background: $datepicker-selected-outfocus;
+  //background: $datepicker-selected-outfocus;
 }
 
 .picker__weekday-display {
@@ -410,7 +408,7 @@
 .picker__day--selected:hover,
 .picker--focused .picker__day--selected {
   // Circle background
-  border-radius: 50%;
+  border-radius: 5px;
   transform: scale(.9);
   background-color: $datepicker-selected;
   &.picker__day--outfocus {
