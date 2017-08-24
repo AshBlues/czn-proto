@@ -190,7 +190,7 @@ $bg-img: linear-gradient(45deg,rgba(255,255,255,.15) 25%,
 transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,
 rgba(255,255,255,.15) 75%,transparent 75%,transparent);
 
-$bg-clr: #5B2C6F;
+$bg-clr: $primary-color;
 
 $brdr-clr: #e5e6e9 #dfe0e4 #d0d1d5;
 
@@ -354,4 +354,12 @@ $brdr-clr: #e5e6e9 #dfe0e4 #d0d1d5;
   border: 1px solid;
   border-color: $brdr-clr;
   border-radius: 2px;
+}
+
+@media #{$medium-and-up} {
+
+  .ico-list {
+    margin-right: 6px;
+  }
+
 }

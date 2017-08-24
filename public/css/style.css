@@ -6119,7 +6119,7 @@ main {
 
 .bg-img-common, .project-border, .side-nav-banner {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-color: #5B2C6F; }
+  background-color: #6C3483; }
 
 .prof-row {
   min-height: 350px !important; }
@@ -6186,7 +6186,7 @@ main {
 
 .radio-wrapper {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-  background-color: #5B2C6F;
+  background-color: #6C3483;
   border-radius: 50%;
   display: inline-block;
   width: 200px;
@@ -6204,7 +6204,7 @@ main {
 
 .big-count {
   font-size: 3rem;
-  color: #5B2C6F !important; }
+  color: #6C3483 !important; }
 
 .count-for {
   text-transform: uppercase;
@@ -6216,6 +6216,9 @@ main {
   border-color: #e5e6e9 #dfe0e4 #d0d1d5;
   border-radius: 2px; }
 
+@media only screen and (min-width: 601px) {
+  .ico-list {
+    margin-right: 6px; } }
 .main-panel {
   color: #000;
   border-radius: 3px;
@@ -6331,6 +6334,8 @@ main {
   width: 166px;
   margin-left: -121px;
   padding-bottom: 1px; }
+  .user-options .main-ui > .title {
+    width: 166px; }
 
 .search-part {
   padding: 10px; }

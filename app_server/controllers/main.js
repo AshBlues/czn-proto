@@ -124,3 +124,7 @@ function __challengeData() {
 module.exports.createChallenege = function(req, res) {
   res.render('challenge-creator', {title: APP_NAME + 'Create Challenge'});
 };
+
+module.exports.createLab = function(req, res) {
+  res.render('lab-creator', {title: APP_NAME + 'Create Lab'});
+};

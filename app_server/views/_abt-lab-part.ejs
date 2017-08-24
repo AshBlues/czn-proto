@@ -1,0 +1,35 @@
+<form onsubmit="return false;">
+  <header>
+    About Lab
+  </header>
+  <body>
+    <div class="row">
+      <div class="input-field col s12">
+        <input type="text" id="l_title" data-length="32" name="title" required>
+        <label for="l_title">Title</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="l_desc" class="materialize-textarea" name="desc" required></textarea>
+        <label for="l_desc">Description</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" id="l_subject" name="subject" required>
+        <label for="l_subject">Subject</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" id="l_duration" name="duration" required>
+        <label for="l_duration">Duration in HRs</label>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <button class="btn waves-effect waves-light" type="submit" name="action">
+      Next
+    </button>
+
+  </footer>
+</form>
