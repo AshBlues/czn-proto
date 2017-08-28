@@ -4,7 +4,7 @@ var mainCrtl = require('../controllers/main');
 
 router.get('/', mainCrtl.index);
 
-module.exports = router;
+
 
 //Dashboard
 router.get('/dashboard', mainCrtl.dashboard);
@@ -30,9 +30,13 @@ router.get('/challenges/archived', mainCrtl.archived_challenges);
 //Lab
 router.get('/lab', mainCrtl.lab);
 
+
+
 //Lab/create
 router.get('/lab/create', mainCrtl.createLab);
 
 
 //Profile
 router.get('/profile', mainCrtl.profile);
+
+module.exports = router;
