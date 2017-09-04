@@ -1,9 +1,12 @@
 var mongodb = require('mongodb').MongoClient;
 var czndb = null;
 
-var url = process.env.NODE_ENV ?
+/*var url = process.env.NODE_ENV ?
   'mongodb://heroku_qzvdq0t1:8hr9ba4pik2q5njcddpej2fjgq@ds159033.mlab.com:59033/heroku_qzvdq0t1'
-   : 'mongodb://localhost:27017/czn';
+   : 'mongodb://localhost:27017/czn';*/
+
+   var url =
+     'mongodb://heroku_qzvdq0t1:8hr9ba4pik2q5njcddpej2fjgq@ds159033.mlab.com:59033/heroku_qzvdq0t1';
 
 mongodb.connect(url, function(err, db) {
   console.log("Connected correctly to server.");
