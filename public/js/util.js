@@ -4,17 +4,18 @@ var util = (function() {
     var json = {};
     var arr = $(form).serializeArray();
     $(arr).each(function(i, obj) {
-      if(!json[obj.name]) {
-        json[obj.name] = obj.value;
+      var $n = obj.name, $v = obj.value;
+      if(!json[$n]) {
+        json[$n] = $v;
       } else {
-        var what = json[obj.name];
+        var what = json[$n];
         if(typeof what === 'string') {
-          json[obj.name] = [what];
+          json[$n] = [what];
         }
-        json[obj.name].push(obj.value);
+        json[$n].push($v);
       }
     });
-    return JSON.stringify(json);
+    return json;
   }
 
 
