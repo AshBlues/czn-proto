@@ -4076,9 +4076,6 @@ button.btn-floating {
   will-change: bottom, opacity; }
 
 .collapsible {
-  border-top: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-left: 1px solid #ddd;
   margin: 0.5rem 0 1rem 0; }
 
 .collapsible-header {
@@ -4087,23 +4084,18 @@ button.btn-floating {
   -webkit-tap-highlight-color: transparent;
   min-height: 3rem;
   line-height: 3rem;
-  padding: 0 1rem;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd; }
+  font-weight: 600; }
   .collapsible-header i {
-    width: 2rem;
-    font-size: 1.6rem;
+    width: 1.3rem;
     line-height: 3rem;
     display: block;
     float: left;
-    text-align: center;
-    margin-right: 1rem; }
+    text-align: center; }
 
 .collapsible-body {
   display: none;
-  border-bottom: 1px solid #ddd;
   box-sizing: border-box;
-  padding: 2rem; }
+  padding: 10px 30px; }
 
 .side-nav .collapsible,
 .side-nav.fixed .collapsible {
@@ -6366,6 +6358,76 @@ main {
         line-height: 35px; }
 
 #mob-srch-ui {
+  display: none; }
+
+.lab-part {
+  display: none; }
+
+.lab-active {
+  display: block; }
+
+.lab {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  background-color: #fff; }
+  .lab header {
+    padding: 5px 10px 10px;
+    font-size: 1.5rem; }
+  .lab section.desc {
+    padding: 5px 10px 10px;
+    font-size: .9rem;
+    color: gray; }
+  .lab section.info {
+    padding: 5px 10px 10px;
+    font-weight: 600;
+    text-align: right; }
+  .lab footer {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    background-color: #F8F9F9; }
+  .lab .header {
+    padding: 5px 10px 10px;
+    font-size: 1.2rem;
+    padding-bottom: 5px; }
+  .lab .cn-options {
+    float: right;
+    font-size: 13px;
+    margin-top: 4px;
+    color: #6C3483; }
+    .lab .cn-options .cn-opt {
+      user-select: none;
+      cursor: pointer; }
+  .lab .list {
+    padding: 10px; }
+    .lab .list .batch {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-bottom: none; }
+      .lab .list .batch .t-header {
+        padding: .7rem;
+        font-weight: 600;
+        user-select: none;
+        cursor: pointer;
+        color: #6C3483;
+        font-size: 13px; }
+        .lab .list .batch .t-header i {
+          margin-right: 8px; }
+      .lab .list .batch .t-body {
+        background-color: #F8F9F9;
+        padding: .7rem;
+        border-top: 1px solid #ddd; }
+      .lab .list .batch:last-child {
+        border-bottom: 1px solid #ddd; }
+  .lab .empty-list {
+    font-size: .9rem;
+    padding: 10px 10px;
+    color: gray; }
+  .lab .comp-form {
+    padding: 10px; }
+
+.sub-form-footer {
+  text-align: right; }
+
+.hide {
   display: none; }
 
 /* ==========================================================================

@@ -1,40 +1,38 @@
-<form onsubmit="return false;">
-  <header>
-    Create Batches
-  </header>
+<form onsubmit="return false;" id="batch-creator-form">
   <body>
+    <input type="hidden" name="labId">
     <div class="row clg">
         <div class="input-field col s4">
-            <select required id="l_b_stream">
+            <select required id="l_b_stream" name="stream">
                <option value="" disabled selected>Select</option>
-               <option value="1">CSE</option>
-               <option value="2">IT</option>
-               <option value="3">ECE</option>
+               <option value="CSE">CSE</option>
+               <option value="IT">IT</option>
+               <option value="ECE">ECE</option>
             </select>
             <label for="l_stream">Stream</label>
         </div>
         <div class="input-field col s4">
-          <select required id="l_b_year">
+          <select required id="l_b_year" name="year">
              <option value="" disabled selected>Select</option>
-             <option value="1">1st</option>
-             <option value="2">2nd</option>
-             <option value="3">3rd</option>
-             <option value="1">4th</option>
+             <option value="1st">1st</option>
+             <option value="2nd">2nd</option>
+             <option value="3rd">3rd</option>
+             <option value="4th">4th</option>
           </select>
           <label for="l_b_year">Year</label>
         </div>
         <div class="input-field col s4">
-          <select required id="l_b_sem">
+          <select required id="l_b_sem" name="sem">
              <option value="" disabled selected>Select</option>
-             <option value="1">ODD</option>
-             <option value="2">EVEN</option>
+             <option value="ODD">ODD</option>
+             <option value="EVEN">EVEN</option>
           </select>
           <label for="l_b_sem">Semester</label>
         </div>
       </div>
       <div class="row scl">
           <div class="input-field col s12">
-              <select required id="l_b_class">
+              <select required id="l_b_class" name="cls">
                  <option value="" disabled selected>Select</option>
                  <option value="1">9</option>
                  <option value="2">10</option>
@@ -44,27 +42,11 @@
               <label for="l_b_class">Class</label>
           </div>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input type="text" id="l_b_name" data-length="32" name="name" required>
-          <label for="l_b_name">Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input type="text" id="l_b_dow" name="dow" required>
-          <label for="l_b_dow">Day of week</label>
-        </div>
-        <div class="input-field col s6">
-          <input type="text" id="l_b_timing" name="timing" class="timepicker" required>
-          <label for="l_b_timing">Timing</label>
-        </div>
-      </div>
   </body>
-  <footer>
-    <button class="btn waves-effect waves-light" type="submit" name="action">
-      Next
+  <div class="sub-form-footer">
+    <button class="btn waves-effect waves-light" onclick="saveBatch('#batch-creator-form', this);">
+      Create
     </button>
 
-  </footer>
+  </div>
 </form>
