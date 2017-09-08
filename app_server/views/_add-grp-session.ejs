@@ -1,0 +1,47 @@
+<form id="cgs-frm" onsubmit="return false;">
+<h4>Create Group</h4>
+<div class="row">
+  <div class="col s12 modal-info">
+    A new session will be created for current year.
+  </div>
+  <span id="target-glist" class="hide"></span>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+    <input type="text" id="l_b_name" data-length="32" name="name" required>
+    <label for="l_b_name">Name</label>
+    <input type="hidden" name="batchId">
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12 m6">
+    <select required name="dow">
+       <option value="" disabled selected>Select</option>
+       <option value="1">Monady</option>
+       <option value="2">Tuesday</option>
+       <option value="3">Wednesday</option>
+       <option value="4">Thursday</option>
+       <option value="5">Friday</option>
+       <option value="6">Saturday</option>
+    </select>
+    <label>Day of week</label>
+  </div>
+  <div class="input-field col s12 m6">
+    <input type="text" id="l_b_timing" name="timing" class="timepicker" required>
+    <label for="l_b_timing">Timing</label>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 align-right">
+      <button class="btn waves-effect waves-light" onclick="saveGrpAndSession('#cgs-frm', this);" id="gc-btn">
+        Create
+      </button>
+  </div>
+</div>
+<div class="row no-b-margin">
+  <div class="col s12 modal-footer-info">
+    <i class="fa fa-asterisk"></i> From next time you don't need to create groups for this lab.
+    Only adding a new session will assign it to next batch of <span id="batch-details"></span>.
+  </div>
+</div>
+</form>

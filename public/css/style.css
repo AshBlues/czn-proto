@@ -6396,27 +6396,26 @@ main {
     .lab .cn-options .cn-opt {
       user-select: none;
       cursor: pointer; }
-  .lab .list {
-    padding: 10px; }
-    .lab .list .batch {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-bottom: none; }
-      .lab .list .batch .t-header {
-        padding: .7rem;
-        font-weight: 600;
-        user-select: none;
-        cursor: pointer;
-        color: #6C3483;
-        font-size: 13px; }
-        .lab .list .batch .t-header i {
-          margin-right: 8px; }
-      .lab .list .batch .t-body {
-        background-color: #F8F9F9;
-        padding: .7rem;
-        border-top: 1px solid #ddd; }
-      .lab .list .batch:last-child {
-        border-bottom: 1px solid #ddd; }
+  .lab .list .batch {
+    background-color: #fff;
+    border: 1px solid #F2F3F4;
+    border-bottom: none;
+    box-shadow: 0px 1px 1px 0px #EAEDED; }
+    .lab .list .batch .t-header {
+      padding: .7rem;
+      font-weight: 600;
+      user-select: none;
+      cursor: pointer;
+      color: #6C3483;
+      font-size: 13px; }
+      .lab .list .batch .t-header i {
+        margin-right: 8px; }
+    .lab .list .batch .t-body {
+      background-color: #F8F9F9;
+      padding: .7rem;
+      border-top: 1px solid #ddd; }
+    .lab .list .batch:last-child {
+      border-bottom: 1px solid #ddd; }
   .lab .empty-list {
     font-size: .9rem;
     padding: 10px 10px;
@@ -6429,6 +6428,53 @@ main {
 
 .hide {
   display: none; }
+
+.align-right {
+  text-align: right; }
+
+.no-b-margin {
+  margin-bottom: 0; }
+
+.no-padd {
+  padding: 0 !important; }
+
+.modal-footer-info {
+  font-size: 13px;
+  color: gray; }
+  .modal-footer-info #batch-details {
+    font-weight: 600; }
+
+.group {
+  margin: 10px; }
+  .group header {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 6px;
+    border-bottom: 1px solid #eee;
+    color: #7D3C98; }
+  .group .sessions {
+    margin-left: 30px;
+    border-left: 1px solid #eee;
+    padding: 10px;
+    padding-right: 0px; }
+    .group .sessions .session-tab {
+      table-layout: fixed; }
+      .group .sessions .session-tab tr {
+        background-color: #E5E8E8; }
+      .group .sessions .session-tab td {
+        text-align: center;
+        padding: 5px;
+        font-weight: 600;
+        font-size: 12px; }
+      .group .sessions .session-tab .mid {
+        border-left: 1px solid #CCD1D1;
+        border-right: 1px solid #CCD1D1; }
+      .group .sessions .session-tab .connector {
+        position: absolute;
+        width: 10px;
+        border-top: 1px solid #eee;
+        margin-left: -15px;
+        margin-top: 9px; }
 
 /* ==========================================================================
    $BASE-PICKER

@@ -41,19 +41,42 @@
     <i class="fa fa-check-square"></i>  {{stream}}, {{year}} Year, {{sem}} Sem
     </section>
     <section class="t-body hide">
-      <section class="header">
+      <section class="header no-padd">
         Groups
         <div class="cn-options">
-          <span class="cn-opt" id="lab-edit"><i class="fa fa-plus"></i>  Create Group</span>
+          <span class="cn-opt js-add-group" id="lab-edit" data-batch={{_id}}><i class="fa fa-plus"></i>  Create Group</span>
         </div>
       </section>
-      <section class="list">
+      <section class="list" id="g-{{_id}}">
 
       </section>
       <section class="footer-msg">
-        <div class="empty-list">Create a new group.</div>
+        <div class="empty-list no-padd">Create a new group.</div>
       </section>
     </section>
+  </section>
+</script>
+<script type="x-tmpl-mustache" id="grp-tmplt">
+  <section class="group">
+    <header>
+      <i class="fa fa-flag-o"></i> {{name}}
+    </header>
+
+    <div class="sessions">
+
+      <table class="session-tab">
+        <tr>
+          <td>
+            <div class="connector">
+            </div>
+            {{year}}
+          </td>
+          <td class="mid">{{dow}}</td>
+          <td>{{timing}}</td>
+        </tr>
+      </table>
+
+    </div>
   </section>
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -62,12 +85,12 @@
 <script>
   const OK_ICON = '<i class="fa fa-check"></i> ';
   const NOK_ICON = '<i class="fa fa-warning"></i> ';
-
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   $(document).ready(function() {
     $(".button-collapse").sideNav();
     initTabs();
     refreshNavState();
-    //$('.modal').modal();
+    $('.modal').modal();
 
     $('.datepicker').pickadate({
        selectMonths: true, // Creates a dropdown to control month
@@ -271,6 +294,7 @@
     $('[name="labId"]').val(LAB.lab._id);
     $('select').material_select();
     initTimePicker();
+    initBatchEventhandlers();
   }
 
   function getLabObj(frm) {
@@ -290,7 +314,9 @@
     $('#batch-list').append(
     Mustache.render($('#batch-template').html(), json));
     LAB.batches.push(json);
+    LAB.lab.batches.push(data._id);
     enableBtn();
+    document.getElementById('batch-creator-form').reset();
   }
 
   function saveBatch(frm, btn) {
@@ -319,6 +345,32 @@
       }
   }
 
+  function saveGrpAndSession(frm, btn) {
+    LAB._btn = btn;
+    var json = formToJSON($(frm));
+    json.session = [];
+    json.year = new Date().getFullYear();
+    console.log(json);
+    saveDoc(json, '/api/msit/labs/create-gs',
+       _saveGroupCallback, 'Group Saved', 'Unable to save');
+  }
+
+  function _saveGroupCallback(data, json) {
+    var g = data.g;
+    for(var i = 0; i < LAB.batches.length; i++) {
+      if(LAB.batches[i]._id === g.batchId) {
+        LAB.batches[i].groups.push(g);
+        break;
+      }
+    }
+    var s = g.sessions[0]
+    s.name = g.name;
+    s.dow = days[s.dow];
+    var id = '#g-' + $('#target-glist').text();
+    $(id).append(Mustache.render($('#grp-tmplt').html(), s));
+    $('#l-c-modal').modal('close');
+  }
+
   function toSlug(title) {
     return title.replace(/\s+/g, '-').toLowerCase();
   }
@@ -345,6 +397,27 @@
 
   function showBatchBody(hdr) {
     $(hdr).next().toggleClass('hide');
+  }
+
+  function initBatchEventhandlers() {
+    $('#batch-list').on('click', '.js-add-group', function() {
+      var bId = $(this).attr('data-batch');
+      $('[name="batchId"]').val(bId);
+      var batch = getThisBatch(bId);
+      $('#batch-details').text(batch.stream + ' ' + batch.year + ' Year');
+      $('#gc-btn').removeAttr('disabled');
+      $('#l-c-modal').modal('open');
+      $('#target-glist').text(bId);
+    });
+
+
+    function getThisBatch(bId) {
+      for(var i = 0; i < LAB.batches.length; i++) {
+        if(LAB.batches[i]._id === bId) {
+          return LAB.batches[i];
+        }
+      }
+    }
   }
 
   /*
