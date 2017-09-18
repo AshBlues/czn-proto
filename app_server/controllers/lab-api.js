@@ -50,7 +50,11 @@ module.exports.getThisLab = function(req, res) {
 module.exports.saveBatch = function(req, res) {
   var doc = JSON.parse(req.body.doc);
   cln(_BATCH).insertOne(doc, function(err, status) {
+        cln(_LAB).update({_id: ObjectID(doc.labId)},
+          {$push: {batches: doc._id}}, function(err, status) {
           res.json({_id: doc._id});
+        });
+
   });
 }
 
@@ -76,9 +80,12 @@ module.exports.saveGS = function(req, res) { //GS -> Group and Session
         cln(_GROUP).updateOne({_id: new ObjectID(groupDoc._id)},
            {$push: {sessions: s}}, function(err, status) {
           groupDoc.sessions.push(sessionDoc);
-          res.json({
-            g: groupDoc
-          });
+          cln(_BATCH).update({_id: ObjectID(groupDoc.batchId)},
+              {$push: {groups: groupDoc._id}}, function(err, status) {
+                res.json({
+                  g: groupDoc
+                });
+              });
         });
       });
   });
