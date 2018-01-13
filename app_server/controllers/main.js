@@ -3,7 +3,7 @@ var APP_NAME = "Cozone: ";
 
 
 module.exports.index = function(req, res) {
-  res.redirect('dashboard');
+  res.render('index', {title: APP_NAME + 'Home'});
 };
 
 
@@ -127,4 +127,15 @@ module.exports.createChallenege = function(req, res) {
 
 module.exports.createLab = function(req, res) {
   res.render('lab-creator', {title: APP_NAME + 'Create Lab'});
+};
+
+
+
+module.exports.instituteSignUp = function(req, res) {
+  res.render('inst-sign-up', {title: APP_NAME + 'Institute Sign Up'});
+};
+
+
+module.exports.instituteLogin = function(req, res) {
+  res.render('inst_login', {title: APP_NAME + 'Institute Sign Up'});
 };

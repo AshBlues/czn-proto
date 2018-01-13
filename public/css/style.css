@@ -3131,11 +3131,11 @@ nav {
       line-height: 42px; }
   nav .brand-logo {
     margin-left: 6px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     position: absolute;
     color: #fff;
     display: inline-block;
-    font-size: 2.1rem;
+    font-size: 1.8rem;
     padding: 0;
     white-space: nowrap; }
     nav .brand-logo.center {

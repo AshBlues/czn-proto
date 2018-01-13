@@ -1,0 +1,38 @@
+<div class="row center" style="maargin-bottom: 20px;">
+  &nbsp;
+</div>
+<div class="row">
+  <div class="col hide-on-med-and-down l7 center">
+    <img src="/images/sample.png">
+  </div>
+  <div class="col s12 l5 card" style="padding: 30px 20px;">
+    <form onsubmit="return false;" id="inst-lgn-frm">
+      <header>
+
+        <div class="row" style="font-size: 2rem; font-weight: normal; color: #555; padding: 0px 0px 0px 10px; margin-bottom: -4px;">
+          Log in
+        </div>
+        <span>to continue to <b>Cozone</b></span>
+      </header>
+      <body>
+        <div class="row" style="margin-top: 10px;">
+          <div class="input-field col s12">
+            <input type="text" id="clg-slug" name="slug" required>
+            <label for="clg-slug">Username</label>
+          </div>
+          <div class="input-field col s12">
+            <input type="password" id="clg-pass" name="pass" required>
+            <label for="clg-pass">Password</label>
+          </div>
+        </div>
+      </body>
+  <footer style="text-align: right; margin-bottom: 18px;">
+    <button class="btn waves-effect waves-light" type="submit" name="action" onclick="instituteLogin('#inst-lgn-frm', this)">
+      Log In
+    </button>
+  </footer>
+
+    </form>
+
+  </div>
+</div>
