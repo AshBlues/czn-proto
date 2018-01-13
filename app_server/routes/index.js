@@ -5,6 +5,8 @@ var mainCrtl = require('../controllers/main');
 router.get('/', mainCrtl.index);
 
 
+router.get('/institute/sign-up', mainCrtl.instituteSignUp);
+router.get('/institute/login', mainCrtl.instituteLogin);
 
 //Dashboard
 router.get('/dashboard', mainCrtl.dashboard);

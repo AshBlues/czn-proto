@@ -4,7 +4,8 @@ var czndb = null;
 const _LAB = 'labs',
       _BATCH = 'batches',
       _GROUP = 'groups',
-      _SESSION = 'sessions';
+      _SESSION = 'sessions',
+      _INSTITUTE = 'institute';
 
 var url = process.env.NODE_ENV ?
   'mongodb://heroku_qzvdq0t1:8hr9ba4pik2q5njcddpej2fjgq@ds159033.mlab.com:59033/heroku_qzvdq0t1'
@@ -12,12 +13,17 @@ var url = process.env.NODE_ENV ?
 
 
 mongodb.connect(url, function(err, db) {
-  console.log("Connected correctly to db server " + url);
-  czndb = db;
+  if(err) {
+    console.log('Error occured while connecting to DB ' + err);
+  } else {
+    console.log('Connected correctly to db server ' + url);
+    czndb = db;
+  }
 });
 
 
 function cln(col) {
+  //console.log('czndb status: ' + czndb);
   return czndb.collection(col);
 }
 
@@ -55,6 +61,17 @@ module.exports.saveBatch = function(req, res) {
           res.json({_id: doc._id});
         });
 
+  });
+}
+
+
+module.exports.saveInstitute = function(req, res) {
+  var doc = JSON.parse(req.body.doc);
+  doc.status = 0;
+  cln(_INSTITUTE).insertOne(doc, function(err, status) {
+    if(!err) {
+      res.json(doc);
+    }
   });
 }
 

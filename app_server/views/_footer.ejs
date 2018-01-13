@@ -420,6 +420,27 @@
     }
   }
 
+  function instituteSignUp(frm, _btn) {
+    LAB._btn = _btn;
+    var obj = formToJSON(frm);
+    if(obj['conf-pass'] == obj['pass']) {
+      delete obj['conf-pass'];
+    }
+
+    saveDoc(obj, '/api/institute/sign-up',
+       _instSignUpCallBack, 'Signed Up...', 'Unable to sign up.');
+    //console.log(obj);
+  }
+
+
+  function _instSignUpCallBack(data, json) {
+  //  console.log(data);
+  //  console.log(json);
+    window.location.assign('/institute/' + json.slug + '/');
+  }
+
+
+
   /*
     $('.n_o').on('click', function(event) {
         event.preventDefault();

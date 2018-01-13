@@ -1,0 +1,93 @@
+<div class="row center" style="font-size: 2rem; font-weight: normal; color: #555;">
+  Create your Cozone Account
+
+</div>
+<div class="row">
+  <div class="col hide-on-med-and-down l7 center">
+    <img src="/images/sample.png">
+  </div>
+  <div class="col s12 l5 card" style="padding-top: 10px;">
+    <form onsubmit="return false;" id="inst-sgn-frm">
+      <header></header>
+      <body>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" id="clg-name" name="name" required>
+          <label for="clg-name">Name of the Institute</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" id="clg-univ" name="univ" required>
+          <label for="clg-univ">University</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" id="clg-email" name="email" required>
+          <label for="clg-email">Email Address</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="text" id="clg-phn" name="phn" required>
+          <label for="clg-phn">Phone No.</label>
+        </div>
+      </div>
+<!--
+      <div class="row hidden">
+        <div class="col s6">
+          <div class="input-field">
+          <input type="text" id="clg-pin" name="pin" required>
+          <label for="clg-pin">Pincode</label>
+        </div>
+        </div>
+        <div class="col s6">
+          <div class="input-field">
+            <input type="text" id="clg-country" name="country" required>
+            <label for="clg-country">Country</label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row hidden">
+        <div class="col s6">
+          <div class="input-field">
+          <input type="text" id="clg-city" name="city" required>
+          <label for="clg-city">City</label>
+        </div>
+        </div>
+        <div class="col s6">
+          <div class="input-field">
+            <input type="text" id="clg-state" name="state" required>
+            <label for="clg-state">State</label>
+          </div>
+        </div>
+      </div>
+-->
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" id="clg-slug" name="slug" required>
+          <label for="clg-slug">Username</label>
+
+          <div class="suggestion" style="margin-top: -10px;">
+            <div style="display: inline-block; margin: 0px 3px; ">msit-123</div>
+            <div style="display: inline-block; margin: 0px 3px; ">msit-kol</div>
+            <div style="display: inline-block; margin: 0px 3px; ">msit-152</div>
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <input type="password" id="clg-pass" name="pass" required>
+          <label for="clg-pass">Password</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="password" id="clg-conf-pass" name="conf-pass" required>
+          <label for="clg-conf-pass">Confirm Password</label>
+        </div>
+    </div>
+  </body>
+  <footer style="text-align: right; margin-bottom: 18px;">
+    <button class="btn waves-effect waves-light" type="submit" name="action" onclick="instituteSignUp('#inst-sgn-frm', this)">
+      Sign Up
+    </button>
+  </footer>
+
+    </form>
+
+  </div>
+</div>

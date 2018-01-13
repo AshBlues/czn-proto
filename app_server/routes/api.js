@@ -12,4 +12,7 @@ router.post('/:institute/labs/create-batch', labCtrl.saveBatch);
 router.post('/:institute/labs/create-gs', labCtrl.saveGS);
 
 
+router.post('/institute/sign-up', labCtrl.saveInstitute);
+
+
 module.exports = router;
